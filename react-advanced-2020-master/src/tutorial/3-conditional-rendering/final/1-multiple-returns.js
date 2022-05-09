@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 const url = 'https://api.github.com/users/QuincyLarson';
 const MultipleReturns = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [user, setUser] = useState('default user');
 
   useEffect(() => {
+    user.setIsLoading(true);
     fetch(url)
       .then((resp) => {
         if (resp.status >= 200 && resp.status <= 299) {
